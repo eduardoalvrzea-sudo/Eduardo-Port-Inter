@@ -274,3 +274,9 @@ details[open] summary > span { transform: rotate(45deg); }
   padding: 16px;
   background: white;
 }
+#suspension .project-media img {
+  object-fit: contain;
+  object-position: center;
+  padding: 16px;
+  transform: none;
+}
