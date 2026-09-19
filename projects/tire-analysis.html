@@ -55,8 +55,20 @@
         </div>
       </section>
 
+      <!-- ALTERNATING ROWS: images switch sides automatically. Copy a whole case-story-row to add another. -->
+      <div class="case-stories">
       <!-- YOUR CONTRIBUTION: add or edit list items below. -->
-      <section class="case-section" aria-labelledby="contribution-title">
+      <section class="case-story-row" aria-labelledby="contribution-title">
+        <!-- CONTRIBUTION IMAGE: change the filename in both href and src to use a different image. -->
+        <figure class="case-story-media">
+          <a href="../assets/images/tire-analysis-polished.png" target="_blank" rel="noopener"
+             aria-label="Open tire-data analysis image in a new tab">
+            <img src="../assets/images/tire-analysis-polished.png"
+                 alt="MATLAB tire-data fit plot with a colored surface and black data points" loading="lazy">
+          </a>
+          <figcaption><strong>Tire-data analysis</strong>A fitted surface alongside the tire data used to examine force, slip angle, and vertical load.</figcaption>
+        </figure>
+        <div class="case-story-copy">
         <div><p class="eyebrow">02 / My role</p><h2 id="contribution-title">My contribution</h2></div>
         <div class="case-prose">
           <ul>
@@ -66,10 +78,21 @@
               <li>Analyzed load transfer, suspension kinematics, and handling balance as part of vehicle dynamics development.</li>
           </ul>
         </div>
+        </div>
       </section>
 
       <!-- ENGINEERING PROCESS: expand these descriptions with your own project details. -->
-      <section class="case-section" aria-labelledby="process-title">
+      <section class="case-story-row" aria-labelledby="process-title">
+        <!-- PROCESS IMAGE: change the filename in both href and src to use a different image. -->
+        <figure class="case-story-media">
+          <!-- ROW IMAGE PLACEHOLDER: replace this div with an image link. See EDITING-PROJECTS.md. -->
+          <div class="case-story-placeholder">
+            <p class="meta-label">Image coming soon</p>
+            <h3>Comparison figure</h3>
+          </div>
+          <figcaption><strong>Pressure &amp; inclination comparisons</strong>Additional analysis figure coming soon.</figcaption>
+        </figure>
+        <div class="case-story-copy">
         <div><p class="eyebrow">03 / Approach</p><h2 id="process-title">Engineering process</h2></div>
         <div class="case-prose">
           <ol class="case-steps">
@@ -78,7 +101,10 @@
               <li><h3>Connect analysis to setup</h3><p>Use the tire-data relationships to inform tire selection and setup decisions, alongside the broader work on load transfer, suspension kinematics, and handling balance.</p></li>
           </ol>
         </div>
+        </div>
       </section>
+
+      </div>
 
       <!-- OPTIONAL RESULTS SECTION: Add the tire model, test conditions, units, data filtering, fit method, pressure and inclination comparisons, and a specific setup decision supported by your results. Do not infer units or results from the plot alone.
            Copy a case-section above to add a Results or Lessons learned section here.

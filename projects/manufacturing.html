@@ -55,8 +55,20 @@
         </div>
       </section>
 
+      <!-- ALTERNATING ROWS: images switch sides automatically. Copy a whole case-story-row to add another. -->
+      <div class="case-stories">
       <!-- YOUR CONTRIBUTION: add or edit list items below. -->
-      <section class="case-section" aria-labelledby="contribution-title">
+      <section class="case-story-row" aria-labelledby="contribution-title">
+        <!-- CONTRIBUTION IMAGE: change the filename in both href and src to use a different image. -->
+        <figure class="case-story-media">
+          <a href="../assets/images/Suspension Master Assembly.PNG" target="_blank" rel="noopener"
+             aria-label="Open assembly context image in a new tab">
+            <img src="../assets/images/Suspension Master Assembly.PNG"
+                 alt="CAD view of the suspension system and its component interfaces" loading="lazy">
+          </a>
+          <figcaption><strong>Assembly context</strong>The suspension system provides context for the manufactured components and their interfaces.</figcaption>
+        </figure>
+        <div class="case-story-copy">
         <div><p class="eyebrow">02 / My role</p><h2 id="contribution-title">My contribution</h2></div>
         <div class="case-prose">
           <ul>
@@ -66,10 +78,21 @@
               <li>Connected component manufacturing with the wider suspension design and integration work.</li>
           </ul>
         </div>
+        </div>
       </section>
 
       <!-- ENGINEERING PROCESS: expand these descriptions with your own project details. -->
-      <section class="case-section" aria-labelledby="process-title">
+      <section class="case-story-row" aria-labelledby="process-title">
+        <!-- PROCESS IMAGE: change the filename in both href and src to use a different image. -->
+        <figure class="case-story-media">
+          <a href="../assets/images/Hub Drawing.png" target="_blank" rel="noopener"
+             aria-label="Open drawing to manufacturing image in a new tab">
+            <img src="../assets/images/Hub Drawing.png"
+                 alt="Rear left upright drawing showing section views, dimensions, geometric tolerances, and notes" loading="lazy">
+          </a>
+          <figcaption><strong>Drawing to manufacturing</strong>The rear left upright drawing communicates component geometry and manufacturing requirements.</figcaption>
+        </figure>
+        <div class="case-story-copy">
         <div><p class="eyebrow">03 / Approach</p><h2 id="process-title">Engineering process</h2></div>
         <div class="case-prose">
           <ol class="case-steps">
@@ -78,7 +101,10 @@
               <li><h3>Keep changes traceable</h3><p>Maintain engineering documentation and revision control so design decisions and changes can be followed through the component development process.</p></li>
           </ol>
         </div>
+        </div>
       </section>
+
+      </div>
 
       <!-- OPTIONAL RESULTS SECTION: Add the specific component you machined, your setup and tooling, material, machining sequence, inspection method, measured dimensions, and lessons learned. Distinguish your own work from other team members’ contributions.
            Copy a case-section above to add a Results or Lessons learned section here.

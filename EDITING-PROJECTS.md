@@ -15,6 +15,28 @@ Open `index.html` in your browser and click any project card. It opens a separat
 
 Open the project HTML file in your editor. Search for `OVERVIEW`, `YOUR CONTRIBUTION`, `ENGINEERING PROCESS`, or `GALLERY` to find the part you want to change. These labels are comments and do not show on the website. Save the file, then refresh your browser.
 
+## Alternating image-and-text rows
+
+After the project overview, each page has two rows: an image on the left beside **My contribution**, then an image on the right beside **Engineering process**. On phones, each image sits above its description. Additional rows automatically switch sides.
+
+To change one of these images, open the project HTML file and search for `CONTRIBUTION IMAGE` or `PROCESS IMAGE`. Change the filename in both the nearby `href` and `src`, then update the `alt` description and the caption. The main image at the top and the gallery images have their own separate paths.
+
+For the tire-analysis process image, search for `ROW IMAGE PLACEHOLDER`. Replace the entire `<div class="case-story-placeholder"> ... </div>` with:
+
+```html
+<a href="../assets/images/tire-comparison.png"
+   target="_blank" rel="noopener"
+   aria-label="Open tire comparison figure in a new tab">
+  <img src="../assets/images/tire-comparison.png"
+       alt="Describe the actual comparison shown in your plot"
+       loading="lazy">
+</a>
+```
+
+Save your real image as `assets/images/tire-comparison.png` first, or use your own filename in both places. Edit the existing `<figcaption>` below it to describe the image.
+
+To add another alternating row, copy an entire `<section class="case-story-row"> ... </section>` **inside the `<div class="case-stories">`**, after the previous row. Replace its image and text. Give its heading a unique ID and use that same ID in the section's `aria-labelledby`. The row's position determines which side its image appears on; no CSS edits are needed.
+
 ## Add more text
 
 Inside a `<div class="case-prose">`, add one paragraph at a time:

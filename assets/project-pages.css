@@ -82,3 +82,57 @@
   .case-gallery { display: block; }
   .gallery-item { break-inside: avoid; margin-bottom: 20px; }
 }
+
+/* Alternating image-and-text rows below each project overview. */
+.case-story-row {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.2fr);
+  grid-template-areas: "media copy";
+  gap: 56px;
+  align-items: center;
+  padding-block: 48px;
+  border-bottom: 1px solid var(--line);
+}
+.case-story-row:nth-child(even) {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, .95fr);
+  grid-template-areas: "copy media";
+}
+.case-story-copy { grid-area: copy; min-width: 0; }
+.case-story-copy h2 { font-size: 1.8rem; line-height: 1.2; margin: 10px 0 24px; }
+.case-story-copy .case-prose { max-width: none; }
+.case-story-media {
+  grid-area: media;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: white;
+}
+.case-story-media > a { display: block; padding: 16px; }
+.case-story-media > a:focus-visible { outline-offset: -5px; }
+.case-story-media img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
+.case-story-media figcaption { padding: 16px 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
+.case-story-media figcaption strong { display: block; margin-bottom: 5px; color: var(--ink); }
+.case-story-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 28px; aspect-ratio: 4 / 3; background: #eaf0f8; text-align: center; }
+.case-story-placeholder h3 { font-size: 1.25rem; }
+@media (max-width: 1000px) {
+  .case-story-row { gap: 32px; }
+}
+@media (max-width: 760px) {
+  .case-story-row,
+  .case-story-row:nth-child(even) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "media" "copy";
+    gap: 24px;
+    padding-block: 32px;
+  }
+  .case-story-copy h2 { font-size: 1.6rem; margin-bottom: 20px; }
+  .case-story-media > a { padding: 12px; }
+  .case-story-media figcaption { padding: 14px 16px; }
+}
+@media print {
+  .case-story-row,
+  .case-story-row:nth-child(even) { display: block; break-inside: avoid; }
+  .case-story-media { max-width: 380px; margin-bottom: 24px; }
+}
