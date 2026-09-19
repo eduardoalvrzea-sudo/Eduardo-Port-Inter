@@ -100,6 +100,3 @@ The source is the supplied Eduardo-Alvarez-Resume.pdf. The three project highlig
 
 The site includes no tracking, third-party fonts, forms, cookies, external image services, or build dependencies. GitHub Pages hosts the static files; email uses your visitor’s configured mail application.
 
-## Layout direction
-
-The layout takes inspiration from the broad structure of [Thanh Tran’s portfolio](https://thanhvtran.com/): a full-width introduction, summary, experience timeline, and project gallery. Eduardo’s typography, navy-and-blue color system, gallery arrangement, initials, placeholders, and writing are original to this project. No photographs, video, employer logos, or biographical claims were copied from that site.
