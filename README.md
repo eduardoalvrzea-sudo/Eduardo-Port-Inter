@@ -12,19 +12,27 @@ Extract the ZIP, then double-click `index.html` inside `eduardo-portfolio`. It w
 
 ```text
 eduardo-portfolio/
-├── index.html                  All portfolio text, links, and sections
+├── index.html                  Homepage and clickable project cards
+├── projects/
+│   ├── suspension.html         Suspension detail page
+│   ├── tire-analysis.html      Tire-analysis detail page
+│   └── manufacturing.html      Manufacturing detail page
 ├── assets/
-│   ├── styles.css              Layout, colors, and responsive styles
+│   ├── styles.css              Original portfolio layout and styles
+│   ├── project-pages.css       Project detail pages and card links
 │   ├── Eduardo-Alvarez-Resume.pdf
-│   └── images/
-│       ├── formula-sae-placeholder.svg
-│       ├── suspension-placeholder.svg
-│       ├── tire-analysis-placeholder.svg
-│       └── manufacturing-placeholder.svg
-├── .nojekyll                   Serves the site as plain static files
+│   └── images/                 Your photos, CAD renders, plots, and logos
+├── EDITING-PROJECTS.md         How to add text, images, and new projects
+├── .nojekyll
 ├── .gitignore
 └── README.md
 ```
+
+## Project detail pages
+
+Click any project card to open its full page in the same tab. Each page includes an overview, your contribution, an engineering-process section, a gallery, and links back to the homepage and onward to another project. Click a detail-page image to open the original at full size.
+
+Read [EDITING-PROJECTS.md](EDITING-PROJECTS.md) for copy-and-paste examples for adding paragraphs, photos, results, and new project pages. The pages are plain HTML and work both locally and on GitHub Pages.
 
 ## Exact GitHub Pages deployment steps
 
@@ -33,9 +41,9 @@ These are actions for you to perform. Creating a public repository makes its upl
 1. Sign in to [GitHub](https://github.com), click **+** at the upper right, then **New repository**.
 2. Enter **portfolio** as the repository name. Choose **Public** for GitHub Free. Turn **Add README** on, then click **Create repository**.
 3. In the repository’s **Code** tab, choose **Add file → Upload files**.
-4. Open the extracted `eduardo-portfolio` folder. Drag its **contents** into the upload area: `index.html`, `assets`, `README.md`, `.nojekyll`, and `.gitignore`. Upload the contents, not the enclosing folder or ZIP. Keep the `assets` folder structure intact.
+4. Open the extracted `eduardo-portfolio` folder. Drag its **contents** into the upload area: `index.html`, `assets`, `projects`, `README.md`, `EDITING-PROJECTS.md`, `.nojekyll`, and `.gitignore`. Upload the contents, not the enclosing folder or ZIP. Keep the `assets` folder structure intact.
 5. Enter **Add mechanical engineering portfolio** as the commit message. Select **Commit directly to the main branch**, then click **Commit changes**.
-6. Verify `index.html` and `.nojekyll` appear in the repository’s top-level file list alongside `assets`. If `.nojekyll` was omitted by your file picker, use **Add file → Create new file**, name it `.nojekyll`, enter one blank line, and commit it to `main`.
+6. Verify `index.html` and `.nojekyll` appear in the repository’s top-level file list alongside `assets` and `projects`. If `.nojekyll` was omitted by your file picker, use **Add file → Create new file**, name it `.nojekyll`, enter one blank line, and commit it to `main`.
 7. Go to **Settings → Pages**. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
 8. Under **Branch**, select **main** and **/ (root)**, then click **Save**. This is the step that enables website publishing.
 9. Check the repository’s **Actions** tab for the Pages build/deployment to finish. Return to **Settings → Pages → Visit site**. Changes can take up to 10 minutes to appear.
@@ -60,34 +68,22 @@ Instructions checked against [GitHub’s publishing-source guide](https://docs.g
 
 ## Add your project photos and CAD renders
 
-The four image areas are deliberately labeled placeholders; none represents an actual vehicle, CAD model, or test result.
+The homepage uses your Formula SAE track photo, suspension CAD assembly, tire-data plot, and component drawing. The detail pages reuse these assets and include labeled spaces for additional images you can add later.
 
-| Area | Current image in `assets/images/` | Suggested replacement |
-| --- | --- | --- |
-| Full-width hero / Formula SAE | `formula-sae-placeholder.svg` | Wide vehicle or workshop photo, ideally 2:1; keep the subject away from the centered title |
-| Suspension project | `suspension-placeholder.svg` | SolidWorks assembly render, landscape 4:3 |
-| Tire-analysis project | `tire-analysis-placeholder.svg` | Your MATLAB plot, landscape 4:3 |
-| Manufacturing project | `manufacturing-placeholder.svg` | Machined parts or workshop photo, landscape 4:3 |
+| Area | Current file in `assets/images/` |
+| --- | --- |
+| Hero / Formula SAE track photo | `formula-sae-placeholder.jpg` |
+| Suspension assembly | `Suspension Master Assembly.PNG` |
+| Tire-data plot | `tire-analysis-polished.png` |
+| Rear left upright drawing | `Hub Drawing.png` |
 
-1. Save your own image in `assets/images/`, for example `suspension-cad.webp`. JPG and PNG also work. Use lowercase filenames with hyphens. Aim for 1,200–1,600 pixels wide and under about 500 KB when practical; retain legibility for plots.
-2. In `index.html`, find the relevant placeholder filename and change only its `src` path to the new file. For example:
+Save new images in `assets/images/`, then update the image paths in the relevant HTML file. Preserve filename capitalization exactly: GitHub Pages paths are case-sensitive. A detail-page image path starts with `../assets/images/`; a homepage image path starts with `assets/images/`.
 
-   ```html
-   <img src="assets/images/suspension-cad.webp"
-        alt="Describe the actual suspension assembly and what this view shows"
-        width="800" height="600" loading="lazy">
-   ```
-
-3. Write specific alternative text describing the real image. Replace the accompanying “coming soon” caption with a short factual caption. For the hero image, edit the `.image-status` text near the bottom of the hero in `index.html`. Remove the obsolete placeholder comment if present.
-4. Preview locally and upload both the edited HTML and the new image when ready.
-
-The hero photograph fills a responsive banner and is cropped on smaller screens; use a wide shot and check both desktop and mobile after replacing it. A dark overlay keeps the title readable. The default hero is an original abstract grid, visibly labeled as a photo placeholder.
-
-For a technical plot or CAD drawing that should remain fully visible, add `class="contain-image"` to its `<img>` element. That style preserves the whole image instead of cropping it to fill the frame. For photos, the default crop usually works well.
+The detail pages fit the whole image inside its frame without cropping. The hero uses a cropped background photo. For complete gallery examples and captions, see [EDITING-PROJECTS.md](EDITING-PROJECTS.md).
 
 ## Edit the content
 
-- **Text and links:** Edit `index.html`. Every section is ordinary HTML; the three expandable project descriptions use native `<details>` elements.
+- **Text and links:** Edit `index.html` for the homepage, or the corresponding file in `projects/` for an in-depth project page. Each homepage card opens its detail page through a normal link.
 - **Résumé:** Replace `assets/Eduardo-Alvarez-Resume.pdf` with a new PDF using the same filename. The download links will keep working.
 - **Color:** Change the `--blue` value near the top of `assets/styles.css`; also update the theme color and embedded favicon in the HTML if changing the brand color.
 - **Contact:** Email and LinkedIn were copied from the supplied résumé. The downloadable PDF is the original and includes its contact information, including phone number. Replace that file if you prefer a different public résumé.
@@ -96,7 +92,7 @@ For a technical plot or CAD drawing that should remain fully visible, add `class
 
 ## Content source
 
-The source is the supplied Eduardo-Alvarez-Resume.pdf. The three project highlights organize different aspects of the same Husker Motorsports role; they are not presented as three separate employers or independently documented projects. Role titles, tools, education, contact information, and date ranges come from that résumé. Descriptions have been edited for clarity. The two numeric experience highlights (1,000+ students/families weekly and landscaping projects up to $100,000) are stated in the source.
+The original source is the supplied Eduardo-Alvarez-Resume.pdf, with subsequent text and image edits supplied by Eduardo. The three project highlights organize different aspects of the same Husker Motorsports role; they are not presented as three separate employers or independently documented projects. Role titles, tools, education, contact information, and date ranges come from that résumé. Descriptions have been edited for clarity. The two numeric experience highlights (1,000+ students/families weekly and landscaping projects up to $100,000) are stated in the source.
 
 The site includes no tracking, third-party fonts, forms, cookies, external image services, or build dependencies. GitHub Pages hosts the static files; email uses your visitor’s configured mail application.
 
